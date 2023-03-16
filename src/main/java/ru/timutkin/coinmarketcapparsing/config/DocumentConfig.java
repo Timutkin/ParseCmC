@@ -7,7 +7,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import ru.timutkin.coinmarketcapparsing.web.constant.CoinMarketCapConstant;
 
-import java.io.IOException;
 
 @Configuration
 public class DocumentConfig {
@@ -15,7 +14,7 @@ public class DocumentConfig {
     private static final String USER_AGENT = "Chrome";
 
     @Bean
-    public Connection connectionCoinMarketCap(){
+    public Connection connectionCoinMarketCap() {
         return Jsoup.connect(CoinMarketCapConstant.MAIN_URL)
                 .userAgent(USER_AGENT)
                 .referrer("https://www.google.com/")
